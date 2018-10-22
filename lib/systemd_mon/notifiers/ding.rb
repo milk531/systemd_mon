@@ -18,17 +18,17 @@ module SystemdMon::Notifiers
     end
 
     def notify_start!(hostname)
-      DingBot.send_markdown("SystemdMon is starting on #{hostname}")
+      DingBot.send_text("SystemdMon is starting on #{hostname}")
     end
 
     def notify_stop!(hostname)
-      DingBot.send_markdown("SystemdMon is stopping on #{hostname}")
+      DingBot.send_text("SystemdMon is stopping on #{hostname}")
     end
 
     def notify!(notification)
       unit = notification.unit
       message = "#{notification.type_text}: systemd unit #{unit.name} on #{notification.hostname} #{unit.state_change.status_text}: #{unit.state.active} (#{unit.state.sub})"
-      DingBot.send_markdown(message)
+      DingBot.send_text(message)
       log "sent ding notification"
     end
 
