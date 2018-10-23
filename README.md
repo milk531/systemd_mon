@@ -19,9 +19,12 @@ It works by subscribing to DBus notifications from Systemd. This means that ther
 ## Installation
 
 Install the gem using:
-
-    gem install systemd_mon
-
+```shell
+    git clone https://github.com/milk531/systemd_mon.git
+    cd systemd_mon
+    gem build *.gemspec
+    gem install *.gem
+```
 ## Usage
 
 To run the command line tool, you will first need to create a YAML configuration file to specify which systemd units you want to monitor, and which notifications you want to trigger. A full example looks like this:
