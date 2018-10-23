@@ -13,7 +13,8 @@ It works by subscribing to DBus notifications from Systemd. This means that ther
 * Systemd (v204 was used in development)
 * `mail` gem (if email notifier is used)
 * `slack-notifier` gem > 1.0 (if slack notifier is used)
-* `hipchat` (if hipchat notifier is used)
+* `hipchat` gem (if hipchat notifier is used)
+* `dingbot` gem (if ding notifier is used)
 
 ## Installation
 
@@ -51,6 +52,9 @@ notifiers:
     token: bigsecrettokenhere
     room: myroom
     username: doge
+  ding:
+    endpoint: https://oapi.dingtalk.com/robot/send
+    access_token: xxxxxxxxxxxx
 units:
 - unicorn.service
 - nginx.service
